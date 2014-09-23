@@ -5,9 +5,9 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    if user.admin?
+    if user.has_role? :admin
         can :manage, :all
-    elsif user.association?
+    elsif user.has_role? :association
         can :create, :news
         can [[:update, :delete], :news], News do |news|
             news.try(:user_id) == user.id
