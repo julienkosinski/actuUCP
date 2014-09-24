@@ -43,5 +43,5 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem "twitter"
 gem "cancan"
-gem "devise"
+gem "devise", :git => "https://github.com/plataformatec/devise.git"
 gem "rolify"
