@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'category/index'
+
   resources :news
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   root 'news#index'
   
   Rails.application.routes.draw do
+  get 'category/index'
+
     devise_for :users, controllers: {
       sessions: 'sessions'
     }
