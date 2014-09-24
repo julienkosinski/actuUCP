@@ -1,0 +1,59 @@
+<%= form_for @newspaper, :html => { :class => "form-horizontal newspaper" } do |f| %>
+
+    <% if @newspaper.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@newspaper.errors.count, "error") %> prohibited this newspaper from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @newspaper.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%= error_span(@newspaper[:title]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@newspaper[:description]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rating, :class => 'form-control' %>
+    </div>
+    <%= error_span(@newspaper[:rating]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :author, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :author, :class => 'form-control' %>
+    </div>
+    <%= error_span(@newspaper[:author]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :id_categories, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :id_categories, :class => 'form-control' %>
+    </div>
+    <%= error_span(@newspaper[:id_categories]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            newspapers_path, :class => 'btn btn-default' %>
+
+<% end %>

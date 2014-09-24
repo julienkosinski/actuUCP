@@ -1,9 +1,0 @@
-<div class="row">
-<p id="span4"><%= notice %></p>
-
- <h2><%= link_to_unless_current @news.title, @news %></h2>
- <%= simple_format @news.body %>
-
- <%= link_to 'Edit', edit_news_path(@news) %> |
- <%= link_to 'Back', news_path %>
-</div>
