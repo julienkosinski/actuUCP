@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :news
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
       sessions: 'sessions'
     }
   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
