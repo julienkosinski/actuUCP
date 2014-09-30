@@ -5,6 +5,8 @@ class NewspapersController < ApplicationController
   # GET /newspapers.json
   def index
     @newspapers = Newspaper.all
+    n = Newspaper.new
+    @tweet = n.twitterUCPSearch
   end
 
   # GET /newspapers/1
