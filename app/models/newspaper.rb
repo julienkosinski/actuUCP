@@ -20,6 +20,6 @@ class Newspaper < ActiveRecord::Base
 	end
 	def twitterUCPSearch
 		puts twitterConnect()
-		return resultTwitterPosts = @client.search("@iut_ucp")
+		return @client.search("@iut_ucp")
 	end
 end

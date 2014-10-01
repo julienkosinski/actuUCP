@@ -38,7 +38,7 @@
     <% end %>
   </tbody>
 </table>
-<%= newspapers.tweet %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_newspaper_path,
             :class => 'btn btn-primary' %>
+<%= instance_variable_get(:@tweet).to_json %>
