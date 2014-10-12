@@ -22,12 +22,33 @@ ActiveRecord::Schema.define(version: 20140924144148) do
     t.datetime "updated_at"
   end
 
+  create_table "kwaks", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newests", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "newspapers", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "rating"
     t.string   "author"
     t.integer  "id_categories"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
