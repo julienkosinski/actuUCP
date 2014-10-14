@@ -6,7 +6,9 @@ class NewspapersController < ApplicationController
   def index
     @newspapers = Newspaper.all
     n = Newspaper.new
-    @tweet = n.twitterUCPSearch
+    @twitterUCPCergy = n.twitterUCPCergy
+    @twitterRPUCP = n.twitterRPUCP
+    @twitterUCPAssoLide = n.twitterUCPAssoLide
   end
 
   # GET /newspapers/1
