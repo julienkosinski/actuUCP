@@ -16,5 +16,5 @@
 /tmp
 
 app_secret.yml
-
+config/database.yml
 .DS_Store

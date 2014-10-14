@@ -1,6 +1,10 @@
 class NewspapersController < ApplicationController
   before_action :set_newspaper, only: [:show, :edit, :update, :destroy]
 
+
+require 'rss'
+require 'open-uri'
+
   # GET /newspapers
   # GET /newspapers.json
   def index
@@ -9,6 +13,18 @@ class NewspapersController < ApplicationController
     @twitterUCPCergy = n.twitterUCPCergy
     @twitterRPUCP = n.twitterRPUCP
     @twitterUCPAssoLide = n.twitterUCPAssoLide
+
+    #display rss
+    feed_url = "http://www.u-cergy.fr/_plugins/web/www/fr/filter/org.ametys.web.new.RSS.accueil/rss.xml"
+    @output = "<h1>Lecture d'un flux RSS</h1>"
+    open(feed_url) do |http|
+    response = http.read
+    result = RSS::Parser.parse(response, false)
+    @output += "Titre du flux : #{result.channel.title}"
+    result.items.each_with_index do |item, i|
+    @output += "#{i+1}. #{item.title} #{item.pubDate}" if i < 10
+  end
+end
   end
 
   # GET /newspapers/1
