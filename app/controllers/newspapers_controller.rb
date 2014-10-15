@@ -16,13 +16,14 @@ require 'open-uri'
 
     #display rss
     feed_url = "http://www.u-cergy.fr/_plugins/web/www/fr/filter/org.ametys.web.new.RSS.accueil/rss.xml"
-    @output = "<h1>Lecture d'un flux RSS</h1>"
+    @title = "Lecture d'un flux RSS"
+    @output = Array.new(10)
     open(feed_url) do |http|
     response = http.read
     result = RSS::Parser.parse(response, false)
-    @output += "Titre du flux : #{result.channel.title}"
+    @titleRss = result.channel.title
     result.items.each_with_index do |item, i|
-    @output += "#{i+1}. #{item.title} #{item.pubDate}" if i < 10
+    @output.push("#{i+1}. #{item.title} #{item.pubDate}") if i < 10
   end
 end
   end
