@@ -53,6 +53,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colorize (0.7.3)
     commonjs (0.2.7)
     equalizer (0.0.9)
     erubis (2.7.0)
@@ -172,6 +173,7 @@ DEPENDENCIES
   angularjs-rails (~> 1.2.26)
   cancan
   coffee-rails (~> 4.0.0)
+  colorize
   devise!
   jbuilder (~> 2.0)
   jquery-rails

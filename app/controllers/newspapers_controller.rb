@@ -5,10 +5,12 @@ class NewspapersController < ApplicationController
   # GET /newspapers.json
   def index
     @newspapers = Newspaper.all
-    n = Newspaper.new
-    @twitterUCPCergy = n.twitterUCPCergy
-    @twitterRPUCP = n.twitterRPUCP
-    @twitterUCPAssoLide = n.twitterUCPAssoLide
+    if $client != nil
+      n = Newspaper.new
+      @retrieveTweetFromAccountUCPCergy = n.retrieveTweetFromAccountUCPCergy
+      @retrieveTweetFromAccountRPUCP = n.retrieveTweetFromAccountRPUCP
+      @retrieveTweetFromAccountUCPAssoLide = n.retrieveTweetFromAccountUCPAssoLide
+    end
   end
 
   # GET /newspapers/1

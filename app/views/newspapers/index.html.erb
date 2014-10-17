@@ -41,6 +41,8 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_newspaper_path,
             :class => 'btn btn-primary' %>
-<%= instance_variable_get(:@twitterUCPCergy).to_json %></br></br></br>
-<%= instance_variable_get(:@twitterRPUCP).to_json %></br></br></br>
-<%= instance_variable_get(:@twitterUCPAssoLide).to_json %>
+<% if $client != nil %>
+  <%= instance_variable_get(:@retrieveTweetFromAccountUCPCergy).to_json %></br></br></br>
+  <%= instance_variable_get(:@retrieveTweetFromAccountRPUCP).to_json %></br></br></br>
+  <%= instance_variable_get(:@retrieveTweetFromAccountUCPAssoLide).to_json %>
+<% end %>
