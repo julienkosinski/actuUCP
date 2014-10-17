@@ -1,0 +1,12 @@
+    
+    <% @newspapers.each do |newspaper| %>
+      <tr>
+        <td><%= newspaper.title %></td>
+        <td><%= newspaper.description %></td>
+        <td><%= newspaper.rating %></td>
+        <td><%= newspaper.author %></td>
+        <td><%= newspaper.id_categories %></td>
+        <td><%=l newspaper.created_at %></td>
+        <td>
+
+ <% end %>

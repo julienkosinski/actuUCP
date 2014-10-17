@@ -9,7 +9,9 @@ class NewspapersController < ApplicationController
 
   # GET /newspapers/1
   # GET /newspapers/1.json
-  def show
+  # Show the newspapers from the id parameter
+  def show_by_cat
+    @newspapers = Newspaper.where("id_categories = ?", params[:id])
   end
 
   # GET /newspapers/new

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
   resources :newspapers
 
-  get 'category/index'
+  get 'category', to: 'category#index'
+  get 'newspapers/show_by_cat/:id', to: 'newspapers#show_by_cat'
 
     devise_for :users, controllers: {
       sessions: 'sessions'
