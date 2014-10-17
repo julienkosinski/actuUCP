@@ -38,7 +38,17 @@
     <% end %>
   </tbody>
 </table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_newspaper_path,
             :class => 'btn btn-primary' %>
+<% if $client != nil %>
+  <%= instance_variable_get(:@retrieveTweetFromAccountUCPCergy).to_json %></br></br></br>
+  <%= instance_variable_get(:@retrieveTweetFromAccountRPUCP).to_json %></br></br></br>
+  <%= instance_variable_get(:@retrieveTweetFromAccountUCPAssoLide).to_json %>
+<% end %>
+
+<%= instance_variable_get(:@title) %></br></br>
+<%= instance_variable_get(:@titleRss) %>
+<% @output.each do |item, i| %>
+  <%= item %>
+<% end %>
