@@ -1,4 +1,5 @@
 class Newspaper < ActiveRecord::Base
+	resourcify
 	require 'twitter'
 	def retrieveTweetFromAccountUCPCergy
 		return $client.search("from:UniversiteCergy", :result_type => "recent").take(200).collect do |tweet|
