@@ -45,5 +45,4 @@ gem "twitter"
 gem "cancan"
 gem "devise", :git => "https://github.com/plataformatec/devise.git"
 gem "rolify"
-gem 'angularjs-rails', '~> 1.2.26'
 gem "colorize"
