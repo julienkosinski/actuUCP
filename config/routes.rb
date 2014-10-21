@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     namespace :users do 
      get 'add_role_to_user', to: 'rolify#radd_role_to_user'
      get 'remove_role_to_user', to: 'rolify#remove_role_to_user'
-     put 'update_role_to_user/:add_or_remove/:user_id/:role_id', to: 'rolify#update_role_to_user'
+     put 'update_role_to_user/:add_or_remove/:role_name/:user_id/:role_id', to: 'rolify#update_role_to_user'
     end
     
     devise_for :users, controllers: {
