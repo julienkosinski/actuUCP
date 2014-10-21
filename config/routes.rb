@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
     
     devise_for :users, controllers: {
-      sessions: 'sessions'
+      sessions: 'users/sessions'
     }
   end
 
