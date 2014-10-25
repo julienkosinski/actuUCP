@@ -1,5 +1,6 @@
 class NewspapersController < ApplicationController
-  before_action :set_newspaper, only: [:show, :edit, :update, :destroy]
+    skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
+
 
 
 require 'rss'
@@ -44,6 +45,15 @@ require 'open-uri'
 
   # GET /newspapers/1/edit
   def edit
+  end
+
+  #GET /feedrss/
+  def feed_rss
+    @feednews = Newspaper.select("title, description, author,created_at, updated_at").order("updated_at DESC").all()
+    respond_to do |format|
+      format.html
+        format.atom { render layout: false }
+    end
   end
 
   # POST /newspapers
