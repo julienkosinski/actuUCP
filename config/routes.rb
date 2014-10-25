@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     get 'newspapers/show_by_cat/:id', to: 'newspapers#show_by_cat'
     
     namespace :users do 
-     get 'add_role_to_user', to: 'rolify#radd_role_to_user'
-     get 'remove_role_to_user', to: 'rolify#remove_role_to_user'
-     put 'update_role_to_user/:add_or_remove/:role_name/:user_id/:role_id', to: 'rolify#update_role_to_user'
+     get 'rolify', to: 'rolify#index'
+     put 'add_role_to_user/:user_name/:role_name', to: 'rolify#add_role_to_user_button', as: 'add_role_to_user_button'
+     delete 'remove_role_to_user/:user_name/:role_name', to: 'rolify#remove_role_to_user_button'
     end
     
     devise_for :users, controllers: {
