@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     
     namespace :users do 
      get 'rolify', to: 'rolify#index'
-     put 'add_role_to_user/:user_name/:role_name', to: 'rolify#add_role_to_user_button', as: 'add_role_to_user_button'
+     put 'rolify/add_role_to_user', to: 'rolify#role_to_user', as: 'add_role_to_user'
      delete 'remove_role_to_user/:user_name/:role_name', to: 'rolify#remove_role_to_user_button'
     end
     
