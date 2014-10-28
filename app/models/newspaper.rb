@@ -3,7 +3,7 @@ class Newspaper < ActiveRecord::Base
 
 	def retrieveTweetFromAccountUCPCergy
 		return $client.search("from:UniversiteCergy", :result_type => "recent").take(200).collect do |tweet|
-			"#{tweet.user.screen_name}: #{tweet.text}"
+			"#{tweet.user.screen_name}: #{tweet.text} #{tweet.created_at}"
 		end
 	end
 	def retrieveTweetFromAccountRPUCP

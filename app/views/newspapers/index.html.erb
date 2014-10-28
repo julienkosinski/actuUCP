@@ -42,9 +42,26 @@
             new_newspaper_path,
             :class => 'btn btn-primary' %>
 <% if $client != nil %>
-  <%= instance_variable_get(:@retrieveTweetFromAccountUCPCergy).to_json %></br></br></br>
-  <%= instance_variable_get(:@retrieveTweetFromAccountRPUCP).to_json %></br></br></br>
-  <%= instance_variable_get(:@retrieveTweetFromAccountUCPAssoLide).to_json %>
+  <% @retrieveTweetFromAccountUCPCergy.each do |tweet| %>
+    <%= tweet %>
+    <br />
+    <br />
+  <% end %>
+  <br />
+  <br />
+  <br />
+  <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
+    <%= tweet %>
+    <br />
+    <br />
+  <% end %>
+  <br />
+  <br />
+  <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
+    <%= tweet %>
+    <br />
+    <br />
+  <% end %>
 <% end %>
 
 <%= instance_variable_get(:@title) %></br></br>
