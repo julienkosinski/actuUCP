@@ -9,11 +9,14 @@ class Ability
         can :manage, :all
     elsif user.has_role? :association
         can :create, Newspaper
+        can :read, Newspaper
+        can :show_by_cat, Newspaper
         can [[:update, :delete], Newspaper], News do |news|
             news.try(:user_id) == user.id
         end
     else
         can :read, Newspaper
+        can :show_by_cat, Newspaper
     end
     #
     # The first argument to `can` is the action you are giving the user 
