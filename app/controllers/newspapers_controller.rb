@@ -2,7 +2,6 @@ class NewspapersController < ApplicationController
     skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
 
 
-
 require 'rss'
 require 'open-uri'
 
@@ -19,7 +18,6 @@ require 'open-uri'
     
     #display rss
     feed_url = "http://www.u-cergy.fr/_plugins/web/www/fr/filter/org.ametys.web.new.RSS.accueil/rss.xml"
-    @title = "Lecture d'un flux RSS"
     @output = Array.new(10)
     open(feed_url) do |http|
       response = http.read
