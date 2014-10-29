@@ -8,12 +8,14 @@ require 'open-uri'
   # GET /newspapers
   # GET /newspapers.json
   def index
-    @newspapers = Newspaper.all
+    @newspapers = Newspaper.all.order("created_at DESC")
+
     if $client != nil
       n = Newspaper.new
       @retrieveTweetFromAccountUCPCergy = n.retrieveTweetFromAccountUCPCergy
       @retrieveTweetFromAccountRPUCP = n.retrieveTweetFromAccountRPUCP
       @retrieveTweetFromAccountUCPAssoLide = n.retrieveTweetFromAccountUCPAssoLide
+
     end
     
     #display rss

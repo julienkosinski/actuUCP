@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'category', to: 'category#index'
   get 'newspapers/show_by_cat/:id', to: 'newspapers#show_by_cat'
-  get "/feedrss", to:"newspapers#feed_rss", :defaults => { :format => 'atom' }
+  get 'feedrss', to:'newspapers#feed_rss', :defaults => { :format => 'atom' }
 
     devise_for :users, controllers: {
       sessions: 'sessions'
