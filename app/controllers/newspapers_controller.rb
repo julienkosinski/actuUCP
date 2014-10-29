@@ -1,4 +1,5 @@
 class NewspapersController < ApplicationController
+  before_action :set_newspaper, only: [:edit, :update, :destroy]
     skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
 
 
