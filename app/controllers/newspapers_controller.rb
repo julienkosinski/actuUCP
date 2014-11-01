@@ -20,16 +20,16 @@ require 'open-uri'
     
     #display rss
     feed_url = "http://www.u-cergy.fr/_plugins/web/www/fr/filter/org.ametys.web.new.RSS.accueil/rss.xml"
-    @output = Array.new(10)
+    #@output = Array.new(10)
     open(feed_url) do |http|
       response = http.read
-      result = RSS::Parser.parse(response, false)
-      @titleRss = result.channel.title
+      @result = RSS::Parser.parse(response, false)
+      #@titleRss = result.channel.title
       #sort rss feed by desc
-      result.items.sort! { |x,y| y.pubDate <=> x.pubDate } 
-      result.items.each_with_index do |item, i|
-        @output.push("#{i+1}. #{item.title} #{item.link} #{item.pubDate}") if i < 10
-      end
+      @result.items.sort! { |x,y| y.pubDate <=> x.pubDate } 
+      #result.items.each_with_index do |item, i|
+        #@output.push("#{item.title} #{item.link} #{item.pubDate}") if i < 10
+      #end
     end
   end
 

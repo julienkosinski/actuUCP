@@ -50,7 +50,6 @@
   <% end %>
   <br />
   <br />
-  <br />
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
     <%= tweet %>
     <br />
@@ -67,6 +66,10 @@
 
 </br></br>
 <%= instance_variable_get(:@titleRss) %>
-<% @output.each do |item, i| %>
-  <%= item %>
+<% @result.items.each_with_index do |item| %>
+  <%= item.pubDate %>
+  <%= item.title %>
+  <%= item.link %>
+  <br />
+  <br />
 <% end %>
