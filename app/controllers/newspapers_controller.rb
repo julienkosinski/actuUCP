@@ -1,6 +1,6 @@
 class NewspapersController < ApplicationController
-  before_action :set_newspaper, only: [:edit, :update, :destroy]
-    skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
+  before_action :set_newspaper, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
 
 
 require 'rss'
@@ -16,7 +16,6 @@ require 'open-uri'
       @retrieveTweetFromAccountUCPCergy = n.retrieveTweetFromAccountUCPCergy
       @retrieveTweetFromAccountRPUCP = n.retrieveTweetFromAccountRPUCP
       @retrieveTweetFromAccountUCPAssoLide = n.retrieveTweetFromAccountUCPAssoLide
-
     end
     
     #display rss
@@ -26,8 +25,10 @@ require 'open-uri'
       response = http.read
       result = RSS::Parser.parse(response, false)
       @titleRss = result.channel.title
+      #sort rss feed by desc
+      result.items.sort! { |x,y| y.pubDate <=> x.pubDate } 
       result.items.each_with_index do |item, i|
-        @output.push("#{i+1}. #{item.title} #{item.pubDate}") if i < 10
+        @output.push("#{i+1}. #{item.title} #{item.link} #{item.pubDate}") if i < 10
       end
     end
   end

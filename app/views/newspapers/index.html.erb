@@ -16,6 +16,7 @@
     </tr>
   </thead>
   <tbody>
+
     <% @newspapers.each do |newspaper| %>
       <tr>
         <td><%= link_to newspaper.id, newspaper_path(newspaper) %></td>
