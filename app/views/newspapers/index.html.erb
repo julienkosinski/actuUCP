@@ -49,13 +49,11 @@
     <br />
   <% end %>
   <br />
-  <br />
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
     <%= tweet %>
     <br />
     <br />
   <% end %>
-  <br />
   <br />
   <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
     <%= tweet %>
@@ -64,12 +62,12 @@
   <% end %>
 <% end %>
 
-</br></br>
+</br>
 <%= instance_variable_get(:@titleRss) %>
-<% @result.items.each_with_index do |item| %>
-  <%= item.pubDate %>
+<% @result.items.each do |item| %>
   <%= item.title %>
   <%= item.link %>
+  <%= item.pubDate %>
   <br />
   <br />
 <% end %>

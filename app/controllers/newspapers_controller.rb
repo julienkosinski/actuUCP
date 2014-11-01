@@ -24,12 +24,8 @@ require 'open-uri'
     open(feed_url) do |http|
       response = http.read
       @result = RSS::Parser.parse(response, false)
-      #@titleRss = result.channel.title
       #sort rss feed by desc
       @result.items.sort! { |x,y| y.pubDate <=> x.pubDate } 
-      #result.items.each_with_index do |item, i|
-        #@output.push("#{item.title} #{item.link} #{item.pubDate}") if i < 10
-      #end
     end
   end
 
