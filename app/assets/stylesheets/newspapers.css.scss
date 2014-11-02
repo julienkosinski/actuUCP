@@ -1,3 +1,67 @@
 // Place all the styles related to the Newspapers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+.navbar {
+	border-bottom:5px solid #590b4d;
+	padding:10px;
+	margin:0;
+	background: #7a166b;
+	height:70px;
+}
+
+.navbar .navbar-brand {
+	display:block;
+	background: url("logo.png") no-repeat scroll 0 0;
+	background-size:131px 60px;
+    display: block;
+    height:60px;
+    width:131px;    	
+    text-indent:-9999px;
+}
+
+.navbar .navbar-toggle:hover {
+	background:#590b4d;
+}
+
+.navbar .navbar-toggle:focus {
+	background:#590b4d;
+}
+
+
+.navbar .navbar-toggle {
+	margin:0;
+	height:45px;
+	width:45px;
+	padding:10px;
+	background:#862d77;
+	border:none;
+	position:relative;
+}
+
+.navbar .navbar-toggle span.icon-bar {
+	background-color:#a36a9a;
+	border-radius:15px;
+	height:3px;
+	width:30px;
+}
+
+.navbar .navbar-collapse {
+	background:#590b4d;
+	position:absolute;
+	border:inherit!important;
+	border-top:6px #a36a9a!important;
+	right:10px;
+	top:55px;
+	width:50%;
+}
+
+.navbar .navbar-collapse .navbar-nav {
+	margin:0;
+}
+
+.navbar .navbar-collapse .navbar-nav li a {
+	color:white;
+}
