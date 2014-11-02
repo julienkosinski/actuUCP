@@ -14,41 +14,29 @@
   <div class="bubble-news">
     <a class="bubble-title" href="<%= item.link %>" target="_blank"><%= item.title %></a>
     <span class="time"><%= item.pubDate %></span>
-    <p><%=  %></p>
+    <p></p>
   </div>
 <% end %>
 
 <% if $client != nil %>
   <% @retrieveTweetFromAccountUCPCergy.each do |tweet| %>
-    <%= tweet.user.screen_name %>
-    <%= tweet.text %>
-    <%= tweet.created_at %>
-    <br />
-    <br />
+    <div class="bubble-news">
+    <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
+    <span class="time"><%= tweet.created_at %></span>
+    <p><%= tweet.text %></p> </div>
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
-    <%= tweet.user.screen_name %>
-    <%= tweet.text %>
-    <%= tweet.created_at %>
-    <br />
-    <br />
+    <div class="bubble-news">
+    <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
+    <span class="time"><%= tweet.created_at %></span>
+    <p><%= tweet.text %></p></div>
   <% end %>
 
   <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
-    <%= tweet.user.screen_name %>
-    <%= tweet.text %>
-    <%= tweet.created_at %>
-    <br />
-    <br />
+    <div class="bubble-news">
+    <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
+    <span class="time"><%= tweet.created_at %></span>
+    <p><%= tweet.text %></p></div>
   <% end %>
 <% end %>
-
-<% @result.items.each do |item| %>
-  <%= item.title %>
-  <%= item.link %>
-  <%= item.pubDate %>
-  <br />
-  <br />
-<% end %>
-
