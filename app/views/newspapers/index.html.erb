@@ -1,7 +1,7 @@
 <%- model_class = Newspaper -%>
 
 <% @newspapers.each do |newspaper| %>
-  <div class="bubble-news <%= newspaper.category_id %>">
+  <div class="bubble-news <%= newspaper.id_categories %>">
     <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
     <span class="time"><%= newspaper.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
     <p>
@@ -16,8 +16,6 @@
   </div>
   <div class="coma"></div>
 <% end %>
-
-
 
 <%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>  
