@@ -73,6 +73,10 @@
         <ul class="navbar-footer">
           <li><%= link_to "RSS", "/feedrss/" %></li>
           <li><%= link_to "Connexion", "/users/sign_in" %></li>
+          <% if can? :create, @newspaper %>
+          <li><%= link_to "Gestion des rôles", "/users/rolify" %></li>
+          <li><%= link_to "Déconnexion", "/users/sign_out" %></li>
+          <% end %>
         </ul>
         <p>&copy; Company 2014</p>
       </footer>

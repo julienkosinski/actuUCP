@@ -123,22 +123,13 @@ h1, h2, h3, a, span, strong, p {
 	margin-top:10px;
 }
 
-.container .row .col-lg-9 .bubble-news .bubble-title {
+.container .row .col-lg-9 .bubble-news a {
 	color:#FAE8F7;
 	font-size:21px;
 	font-family:'Roboto';
 	max-width:50%;
 	display:inline-block;
 }
-
-.navbar-footer{
- 	list-style: none;
- }
-
- .navbar-footer li{
- display : inline-block;
- margin-left: 5px;
- }
 
 .container .row .col-lg-9 .bubble-news span.readMore {
 	color:#FCEDFA;
