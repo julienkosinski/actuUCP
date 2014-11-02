@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     
     get 'category', to: 'category#index'
     get 'newspapers/show_by_cat/:id', to: 'newspapers#show_by_cat'
-    
+    get '/feedrss', to:'newspapers#feed_rss', :defaults => { :format => 'atom' }
+
     namespace :users do 
      get 'rolify', to: 'rolify#index'
      put 'rolify/add_role_to_user', to: 'rolify#role_to_user', as: 'add_role_to_user'

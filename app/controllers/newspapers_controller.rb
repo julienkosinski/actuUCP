@@ -1,6 +1,7 @@
 class NewspapersController < ApplicationController
   load_and_authorize_resource
   before_action :set_newspaper, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_newspaper, only: [:feed_rss, :new, :create]
 
 
 require 'rss'
@@ -9,7 +10,8 @@ require 'open-uri'
   # GET /newspapers
   # GET /newspapers.json
   def index
-    @newspapers = Newspaper.all
+    @newspapers = Newspaper.all.order("created_at DESC")
+
     if $client != nil
       n = Newspaper.new
       @retrieveTweetFromAccountUCPCergy = n.retrieveTweetFromAccountUCPCergy
@@ -19,15 +21,12 @@ require 'open-uri'
     
     #display rss
     feed_url = "http://www.u-cergy.fr/_plugins/web/www/fr/filter/org.ametys.web.new.RSS.accueil/rss.xml"
-    @title = "Lecture d'un flux RSS"
-    @output = Array.new(10)
+    #@output = Array.new(10)
     open(feed_url) do |http|
       response = http.read
-      result = RSS::Parser.parse(response, false)
-      @titleRss = result.channel.title
-      result.items.each_with_index do |item, i|
-        @output.push("#{i+1}. #{item.title} #{item.pubDate}") if i < 10
-      end
+      @result = RSS::Parser.parse(response, false)
+      #sort rss feed by desc
+      @result.items.sort! { |x,y| y.pubDate <=> x.pubDate } 
     end
   end
 
@@ -45,6 +44,15 @@ require 'open-uri'
 
   # GET /newspapers/1/edit
   def edit
+  end
+
+  #GET /feedrss/
+  def feed_rss
+    @feednews = Newspaper.select("title, description, author,created_at, updated_at").order("updated_at DESC").all()
+    respond_to do |format|
+      format.html
+        format.atom { render layout: false }
+    end
   end
 
   # POST /newspapers
