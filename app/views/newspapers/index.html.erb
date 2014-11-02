@@ -44,26 +44,30 @@
             :class => 'btn btn-primary' %>
 <% if $client != nil %>
   <% @retrieveTweetFromAccountUCPCergy.each do |tweet| %>
-    <%= tweet %>
+    <%= tweet.user.screen_name %>
+    <%= tweet.text %>
+    <%= tweet.created_at %>
     <br />
     <br />
   <% end %>
-  <br />
+
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
-    <%= tweet %>
+    <%= tweet.user.screen_name %>
+    <%= tweet.text %>
+    <%= tweet.created_at %>
     <br />
     <br />
   <% end %>
-  <br />
+
   <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
-    <%= tweet %>
+    <%= tweet.user.screen_name %>
+    <%= tweet.text %>
+    <%= tweet.created_at %>
     <br />
     <br />
   <% end %>
 <% end %>
 
-</br>
-<%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>
   <%= item.title %>
   <%= item.link %>
