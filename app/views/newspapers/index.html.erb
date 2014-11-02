@@ -16,6 +16,8 @@
   <div class="coma"></div>
 <% end %>
 
+
+
 <%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>  
   <div class="bubble-news">
@@ -23,6 +25,7 @@
     <span class="time"><%= item.pubDate %></span>
     <p></p>
   </div>
+  <div class="coma"></div>
 <% end %>
 
 <% if $client != nil %>
@@ -31,8 +34,8 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p> 
-    <div class="coma"></div>
   </div>
+      <div class="coma"></div>
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
@@ -40,8 +43,8 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p>
-    <div class="coma"></div>
   </div>
+  <div class="coma"></div>
   <% end %>
 
 
@@ -50,8 +53,9 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p>
-    <div class="coma"></div>
   </div>
+      <div class="coma"></div>
+
   <% end %>
 
 <% end %>
