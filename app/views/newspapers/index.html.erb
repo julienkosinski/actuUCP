@@ -1,7 +1,7 @@
 <%- model_class = Newspaper -%>
 
 <% @newspapers.each do |newspaper| %>
-  <div class="bubble-news <%= newspaper.id %>">
+  <div class="bubble-news <%= newspaper.category_id %>">
     <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
     <span class="time"><%= newspaper.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
     <p>
@@ -21,17 +21,16 @@
 
 <%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>  
-  <div class="bubble-news rss">
+  <div class="bubble-rss">
     <a class="bubble-title" href="<%= item.link %>" target="_blank"><%= item.title %></a>
     <span class="time"><%= item.pubDate.to_time.strftime('%d/%m/%y à %H:%M') %></span>
     <p></p>
   </div>
-  <div class="coma"></div>
 <% end %>
 
 <% if $client != nil %>
   <% @retrieveTweetFromAccountUCPCergy.each do |tweet| %>
-    <div class="bubble-news twitter">
+    <div class="bubble-twitter">
       <div class="bubble-title">Tweet par <%= tweet.user.screen_name %></div>
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <p><%= tweet.text %></p>
@@ -40,7 +39,7 @@
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
-    <div class="bubble-news twitter">
+    <div class="bubble-twitter">
       <div class="bubble-title">Tweet par <%= tweet.user.screen_name %></div>
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <p><%= tweet.text %></p>
@@ -50,7 +49,7 @@
 
 
   <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
-    <div class="bubble-news twitter">
+    <div class="bubble-twitter">
       <div class="bubble-title">Tweet par <%= tweet.user.screen_name %></div>
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <p><%= tweet.text %></p>
