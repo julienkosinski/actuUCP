@@ -12,3 +12,15 @@ categories = Category.create([{ id: '1', name: 'Sport' }, { id: '2', name: 'Vie 
 	{ id: '8', name: 'A la une' }])
 
 newspapers = Newspaper.create([{id: '1', title: "Le RCGennevilliers répond", description: "Après les succès du Real Cergy et du FC Paris samedi, le RCGennevilliers a lui aussi empoché trois points ce dimanche, lors de la 8e journée de Liga. Les Matelassiers l'ont emporté à domicile face au RC de Gennevilliers (2-0).", author: 'Michou', id_categories: '1'}])
+
+['association', 'admin'].each do |role|
+  Role.find_or_create_by({name: role})
+end
+
+newuser = User.create!({
+      email: 'equipe-kwak@gmail.com',
+      password: 'admin123',
+      password_confirmation: 'admin123'
+   })
+
+newuser.add_role :admin

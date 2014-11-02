@@ -1,0 +1,9 @@
+<%= form_tag({:controller => :rolify, :action => :role_to_user}, :method => :put) do %>
+<%= label_tag :add_or_remove_roles %>
+	<div class="field">
+		<%= select_tag :role_name,options_from_collection_for_select(Role.all,"name","name") %>
+		<%= select_tag :user_id,options_from_collection_for_select(User.all,"id","email") %>
+	</div>
+	<%= submit_tag "Add", name: 'add_button' %>
+	<%= submit_tag "Remove", name: 'remove_button' %>
+<% end %>

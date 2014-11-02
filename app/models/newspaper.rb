@@ -1,4 +1,5 @@
 class Newspaper < ActiveRecord::Base
+	resourcify
 	require 'twitter'
 
 	def retrieveTweetFromAccountUCPCergy
