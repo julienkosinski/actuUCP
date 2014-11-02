@@ -1,4 +1,5 @@
 class Users::RolifyController < ActionController::Base
+	layout "newspapers"
 	def index
 	end
 

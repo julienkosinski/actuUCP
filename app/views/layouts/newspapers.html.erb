@@ -46,10 +46,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/newspapers/">Kwak</a>
+        <a class="navbar-brand" href="<%= newspapers_path %>">Kwak</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "A la une", "/newspapers/"  %></li>
+            <li><%= link_to "A la une", newspapers_path  %></li>
             <li><%= link_to "Vie politique/sociale", "/newspapers/show_by_cat/2"  %></li>
             <li><%= link_to "Vie pratique", "/newspapers/show_by_cat/4"  %></li>
             <li><%= link_to "Culture", "/newspapers/show_by_cat/3"  %></li>
@@ -72,6 +72,7 @@
       <footer>
         <ul class="navbar-footer">
           <li><%= link_to "RSS", "/feedrss/" %></li>
+          <li><%= link_to "Connexion", "/users/sign_in" %></li>
         </ul>
         <p>&copy; Company 2014</p>
       </footer>
