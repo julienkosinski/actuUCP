@@ -11,7 +11,7 @@ class Ability
         can :create, Newspaper
         can :read, Newspaper
         can :show_by_cat, Newspaper
-        can [[:update, :delete], Newspaper], News do |news|
+        can [[:update, :delete], Newspaper], Newspaper do |news|
             news.try(:user_id) == user.id
         end
     else
