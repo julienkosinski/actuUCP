@@ -89,8 +89,20 @@ h1, h2, h3, a, span, strong, p {
 	padding:0;
 }
 
+.container .row .col-lg-9 .une {
+	margin:10px;
+}
+
+.container .row .col-lg-9 h1 {
+	font-size:21px;
+	font-family:'Roboto';
+	color:#590b4d;
+}
+
+/*---------------Bubbles news --------------*/
+
 .container .row .col-lg-9 .bubble-news {
-	background:#fff1fd;
+	background:#590b4d;
 	margin-bottom:0;
 	margin-left:10px;
 	margin-right:10px;
@@ -100,23 +112,30 @@ h1, h2, h3, a, span, strong, p {
 	position:relative;
 }
 
+.container .row .col-lg-9 .bubble-news p {
+	color:#ffffff;
+	font-size:14px;
+	font-family:'Roboto';
+}
+
 .container .row .col-lg-9 .bubble-news a {
-	color:#590b4d;
+	color:#ffffff;
 	font-size:21px;
 	font-family:'Roboto';
-	max-width:60%;
-	display:block;
-	border:1px solid red;
+	max-width:50%;
+	display:inline-block;
 }
 
 .container .row .col-lg-9 .bubble-news span.readMore {
-	color:#590b4d;
+	color:#ffffff;
 	font-size:14px;
 	font-family:'Roboto';
 }
 
 .container .row .col-lg-9 .bubble-news span.time {
 	float:right;
+	font-size:12px;
+	color:#ffffff;
 }
 
 .container .row .col-lg-9 .bubble-news a:focus, .container .row .col-lg-9 .bubble-news a:active {
@@ -131,25 +150,85 @@ h1, h2, h3, a, span, strong, p {
 	color:#862d77;
 }
 
-.container .row .col-lg-9 .bubble-news span {
-	color:#333333;
+
+.container .row .col-lg-9 .coma {
+	position:absolute;
+	background:url('coche_bd.png') no-repeat;
+	background-size: 25px 21px;
+	height:25px;
+	width:21px;
+	right:8%;
+}
+
+/*-------- Bubbles rss --------*/
+
+.container .row .col-lg-9 .bubble-rss {
+	margin:10px;
+	padding:10px;
+}
+
+.container .row .col-lg-9 .bubble-rss a {
+	color:#590b4d;
 	font-size:14px;
+	font-family:'Roboto';
+	display:block;
+}
+
+.container .row .col-lg-9 .bubble-rss span.time {
+	float:right;
+	font-size:12px;
+}
+
+.container .row .col-lg-9 .bubble-rss a:focus, .container .row .col-lg-9 .bubble-rss a:active {
+	color:#862d77;
 	font-family:'Roboto';
 }
 
+.container .row .col-lg-9 .bubble-rss a:hover {
+	background:none;
+	text-decoration:none;
+	color:#862d77;
+}
 
-.container .row .col-lg-9 .bubble-news p {
-	color:#333333;
+
+/*---------------Bubbles twitter --------------*/
+
+.container .row .col-lg-9 .bubble-twitter {
+	background:#4099FF;
+	margin-bottom:0;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:30px;
+	border-radius:15px;
+	padding:10px;
+	position:relative;
+}
+
+.container .row .col-lg-9 .bubble-twitter p {
+	color:#ffffff;
 	font-size:14px;
 	font-family:'Roboto';
+	margin-top:10px;
+}
+
+.container .row .col-lg-9 .bubble-twitter .bubble-title {
+	color:#ffffff;
+	font-size:21px;
+	font-family:'Roboto';
+	display:inline-block
+}
+
+.container .row .col-lg-9 .bubble-twitter .time {
+	float:right;
+	color:white;
+	font-size:12px;
 }
 
 .container .row .col-lg-9 .coma {
-	right:-90%;
-	position:relative;
+	position:absolute;
 	background:url('coche_bd.png') no-repeat;
 	background-size: 25px 21px;
-	display:block;
 	height:25px;
 	width:21px;
+	right:8%;
 }
