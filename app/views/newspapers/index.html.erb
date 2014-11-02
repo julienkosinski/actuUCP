@@ -3,10 +3,17 @@
   <div class="bubble-news">
     <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
     <span class="time"><%= newspaper.created_at %></span>
-    <p><%= newspaper.description %>
-      <span class="readMore">Lire la suite</span></p>
-      <div class="coma"></div>
+    <p>
+      <% if newspaper.description.length > 150 %>
+      <% text = newspaper.description[0..150]+"..." %>
+      <%= text %>
+      <a href="<%= newspaper_path(newspaper)%>" class="readMore">Lire la suite</a>
+      <% else %>
+      <%= newspaper.description %>
+      <% end %>
+      </p>
   </div>
+  <div class="coma"></div>
 <% end %>
 
 <%= instance_variable_get(:@titleRss) %>
@@ -16,7 +23,6 @@
     <span class="time"><%= item.pubDate %></span>
     <p></p>
   </div>
-  <div class="coma"></div>
 <% end %>
 
 <% if $client != nil %>
