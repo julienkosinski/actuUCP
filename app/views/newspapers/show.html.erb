@@ -2,7 +2,7 @@
 
 <div class="bubble-news">
   <span class="bubble-title"><%= @newspaper.title %></span>
-  <span class="bubble-time"><%= @newspaper.created_at %></span>
+  <span class="bubble-time"><%= @newspaper.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
   <p><%= @newspaper.description %></p>
 </div>
 
