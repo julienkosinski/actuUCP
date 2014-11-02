@@ -5,11 +5,9 @@
     <span class="time"><%= newspaper.created_at %></span>
     <p><%= newspaper.description %>
       <span class="readMore">Lire la suite</span></p>
+      <div class="coma"></div>
   </div>
-  <div class="coma"></div>
 <% end %>
-
-
 
 <%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>  
@@ -18,6 +16,7 @@
     <span class="time"><%= item.pubDate %></span>
     <p></p>
   </div>
+  <div class="coma"></div>
 <% end %>
 
 <% if $client != nil %>
@@ -25,20 +24,28 @@
     <div class="bubble-news">
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
-    <p><%= tweet.text %></p> </div>
+    <p><%= tweet.text %></p> 
+    <div class="coma"></div>
+  </div>
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
     <div class="bubble-news">
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
-    <p><%= tweet.text %></p></div>
+    <p><%= tweet.text %></p>
+    <div class="coma"></div>
+  </div>
   <% end %>
+
 
   <% @retrieveTweetFromAccountUCPAssoLide.each do |tweet| %>
     <div class="bubble-news">
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
-    <p><%= tweet.text %></p></div>
+    <p><%= tweet.text %></p>
+    <div class="coma"></div>
+  </div>
   <% end %>
+
 <% end %>
