@@ -95,11 +95,50 @@ h1, h2, h3, a, span, strong, p {
 	margin-left:10px;
 	margin-right:10px;
 	margin-top:30px;
+	border-radius:15px;
 	padding:10px;
 	position:relative;
 }
 
-.container .row .col-lg-9 .bubble-news a, .container .row .col-lg-9 .bubble-news span, .container .row .col-lg-9 .bubble-news p {
+.container .row .col-lg-9 .bubble-news a {
+	color:#590b4d;
+	font-size:21px;
+	font-family:'Roboto';
+	max-width:60%;
+	display:block;
+	border:1px solid red;
+}
+
+.container .row .col-lg-9 .bubble-news span.readMore {
+	color:#590b4d;
+	font-size:14px;
+	font-family:'Roboto';
+}
+
+.container .row .col-lg-9 .bubble-news span.time {
+	float:right;
+}
+
+.container .row .col-lg-9 .bubble-news a:focus, .container .row .col-lg-9 .bubble-news a:active {
+	color:#862d77;
+	font-size:21px;
+	font-family:'Roboto';
+}
+
+.container .row .col-lg-9 .bubble-news a:hover {
+	background:none;
+	text-decoration:none;
+	color:#862d77;
+}
+
+.container .row .col-lg-9 .bubble-news span {
+	color:#333333;
+	font-size:14px;
+	font-family:'Roboto';
+}
+
+
+.container .row .col-lg-9 .bubble-news p {
 	color:#333333;
 	font-size:14px;
 	font-family:'Roboto';
