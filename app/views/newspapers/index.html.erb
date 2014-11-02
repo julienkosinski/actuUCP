@@ -3,11 +3,20 @@
   <div class="bubble-news">
     <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
     <span class="time"><%= newspaper.created_at %></span>
-    <p><%= newspaper.description %><br>
-      <span class="readMore">Lire la suite</span></p>
-      <div class="coma"></div>
+    <p>
+      <% if newspaper.description.length > 150 %>
+      <% text = newspaper.description[0..150]+"..." %>
+      <%= text %>
+      <a href="<%= newspaper_path(newspaper)%>" class="readMore">Lire la suite</a>
+      <% else %>
+      <%= newspaper.description %>
+      <% end %>
+      </p>
   </div>
+  <div class="coma"></div>
 <% end %>
+
+
 
 <%= instance_variable_get(:@titleRss) %>
 <% @result.items.each do |item| %>  
@@ -25,8 +34,8 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p> 
-    <div class="coma"></div>
   </div>
+      <div class="coma"></div>
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
@@ -34,8 +43,8 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p>
-    <div class="coma"></div>
   </div>
+  <div class="coma"></div>
   <% end %>
 
 
@@ -44,8 +53,9 @@
     <div class="bubble-title" target="_blank"><%= tweet.user.screen_name %></div>
     <span class="time"><%= tweet.created_at %></span>
     <p><%= tweet.text %></p>
-    <div class="coma"></div>
   </div>
+      <div class="coma"></div>
+
   <% end %>
 
 <% end %>
