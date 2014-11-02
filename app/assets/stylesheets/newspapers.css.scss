@@ -5,19 +5,28 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 
 
+/*-----------------RESET---------------------------------------------------------------------*/
+
 h1, h2, h3, a, span, strong, p {
 	font-family:'Roboto';
 	color:#333333;
 	font-size:14px;
 }
 
+/*----------------HEADER ET NAV*-------------------------------------------------------------/
+
+/*header*/
+
 .navbar {
 	border-bottom:5px solid #590b4d;
 	padding:10px;
 	margin:0;
 	background: #7a166b;
-	height:70px;
+	height:80px;
 }
+
+
+/*logo*/
 
 .navbar .navbar-brand {
 	display:block;
@@ -27,6 +36,19 @@ h1, h2, h3, a, span, strong, p {
     height:60px;
     width:131px;    	
     text-indent:-9999px;
+    margin-left:10px;
+}
+
+/*Navigation bouton*/
+
+.navbar .navbar-toggle {
+	margin:5px 10px 0 0;
+	height:45px;
+	width:45px;
+	padding:10px;
+	background:#862d77;
+	border:none;
+	position:relative;
 }
 
 .navbar .navbar-toggle:hover {
@@ -37,17 +59,6 @@ h1, h2, h3, a, span, strong, p {
 	background:#590b4d;
 }
 
-
-.navbar .navbar-toggle {
-	margin:0;
-	height:45px;
-	width:45px;
-	padding:10px;
-	background:#862d77;
-	border:none;
-	position:relative;
-}
-
 .navbar .navbar-toggle span.icon-bar {
 	background-color:#a36a9a;
 	border-radius:15px;
@@ -55,12 +66,15 @@ h1, h2, h3, a, span, strong, p {
 	width:30px;
 }
 
+
+/*Menu ouvert*/
+
 .navbar .navbar-collapse {
 	background:#590b4d;
 	position:absolute;
 	border:6px #a36a9a!important;
-	right:10px;
-	top:55px;
+	right:20px;
+	top:60px;
 	width:50%;
 	padding:0;
 }
@@ -68,7 +82,6 @@ h1, h2, h3, a, span, strong, p {
 .navbar .navbar-collapse .navbar-nav {
 	margin:0;
 }
-
 
 .navbar .navbar-collapse .navbar-nav li {
 	border-bottom:1px solid #a36a9a;
@@ -85,6 +98,8 @@ h1, h2, h3, a, span, strong, p {
 	background:#a36a9a;
 }
 
+/*---------CONTENU PAGE ACCUEIL-----------------------------------------------------------------------*/
+
 .container .row .col-lg-9 {
 	padding:0;
 }
@@ -100,7 +115,61 @@ h1, h2, h3, a, span, strong, p {
 	color:#333333;
 	margin-top:40px;
 	margin-bottom:20px;
-	margin-left:10px;
+	margin-left:20px;
+}
+
+.container .row .col-lg-9 .btn {
+	color:#FAE8F7;
+	background:#590b4d;
+	margin-bottom:0;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:30px;
+	border-radius:8px;
+	border:none;
+	padding:10px;
+	width:100px;
+}
+
+.container .row .col-lg-9 .btn-primary:hover {
+	color:#a36a9a;
+}
+
+/*------------- FORMULAIRE CREATION-------------*/
+
+.container .row .col-lg-9 .page-header {
+	border-bottom:none;
+}
+
+.container .row .col-lg-9 .page-header h1 {
+	font-family:'Roboto';
+	color:#333333;
+}
+.container .row .col-lg-9 #new_newspaper {
+	margin:20px;
+}
+
+.container .row .col-lg-9 #new_newspaper .btn {
+	color:#FAE8F7;
+	background:#590b4d;
+	margin:0;
+	margin-top:20px;
+	border-radius:8px;
+	border:none;
+	padding:10px;
+	width:100px;
+}
+
+.container .row .col-lg-9 #new_newspaper .control-group {
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.container .row .col-lg-9 #new_newspaper .form-control {
+	margin-top:10px;
+}
+
+.container .row .col-lg-9 #new_newspaper .control-label {
+	margin:0;
 }
 
 /*---------------Bubbles news --------------*/
@@ -108,8 +177,8 @@ h1, h2, h3, a, span, strong, p {
 .container .row .col-lg-9 .bubble-news {
 	background:#590b4d;
 	margin-bottom:0;
-	margin-left:10px;
-	margin-right:10px;
+	margin-left:20px;
+	margin-right:20px;
 	margin-top:30px;
 	border-radius:15px;
 	padding:10px;
@@ -158,11 +227,10 @@ h1, h2, h3, a, span, strong, p {
 
 .container .row .col-lg-9 .coma-news {
 	position:absolute;
-	background:url('coche_bd_violet.png') no-repeat;
+	background:url('coche_bd_violet.png') no-repeat scroll 0px -1px / 20px 15px rgba(0, 0, 0, 0);
 	background-size: 20px 15px;
 	display:block;
 	right:8%;
-	top:132px;
 	height:35px;
 	width:31px;
 }
@@ -170,10 +238,13 @@ h1, h2, h3, a, span, strong, p {
 /*-------- Bubbles rss --------*/
 
 .container .row .col-lg-9 .bubble-rss {
-	margin:10px;
-	padding:10px;
 	background:#ee8755;
+	margin-bottom:0;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:30px;
 	border-radius:15px;
+	padding:10px;
 	position:relative;
 }
 
@@ -209,7 +280,7 @@ h1, h2, h3, a, span, strong, p {
 
 .container .row .col-lg-9 .coma-rss {
 	position:absolute;
-	background:url('coche_bd_orange.png') no-repeat;
+	background:url("coche_bd_orange.png") no-repeat scroll 10px 9px / 20px 15px rgba(0, 0, 0, 0);
 	background-size: 20px 15px;
 	display:block;
 	right:8%;
@@ -223,8 +294,8 @@ h1, h2, h3, a, span, strong, p {
 .container .row .col-lg-9 .bubble-twitter {
 	background:#55acee;
 	margin-bottom:0;
-	margin-left:10px;
-	margin-right:10px;
+	margin-left:20px;
+	margin-right:20px;
 	margin-top:30px;
 	border-radius:15px;
 	padding:10px;
@@ -253,7 +324,7 @@ h1, h2, h3, a, span, strong, p {
 
 .container .row .col-lg-9 .coma-twitter {
 	position:absolute;
-	background:url('coche_bd_twitter.png') no-repeat;
+	background:url('coche_bd_twitter.png') no-repeat scroll 0px -1px / 20px 15px rgba(0, 0, 0, 0);
 	background-size: 20px 15px;
 	display:block;
 	right:8%;
