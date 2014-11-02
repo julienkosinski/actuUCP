@@ -1,8 +1,8 @@
 <%- model_class = Newspaper -%>
-
+<div class='une'><h1>A la une</h1></div>
 <% @newspapers.each do |newspaper| %>
 
-<div class='une'><h1>A la une</h1></div>
+
   <div class="bubble-news <%= newspaper.id_categories %>">
     <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
     <span class="time"><%= newspaper.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
@@ -17,7 +17,7 @@
       <% end %>
       </p>
   </div>
-  <div class="coma"></div>
+  <div class="coma-news"></div>
 <% end %>
 
 <div class='une'><h1>Dernier tweets</h1></div>
@@ -28,7 +28,7 @@
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <br><p><%= tweet.text %></p>
     </div>
-    <div class="coma coma-twitter"></div>
+    <div class="coma-twitter"></div>
   <% end %>
 
   <% @retrieveTweetFromAccountRPUCP.each do |tweet| %>
@@ -37,7 +37,7 @@
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <br><p><%= tweet.text %></p>
     </div>
-    <div class="coma coma-twitter"></div>
+    <div class="coma-twitter"></div>
   <% end %>
 
 
@@ -47,7 +47,7 @@
       <span class="time"><%= tweet.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
       <br><p><%= tweet.text %></p>
     </div>
-    <div class="coma coma-twitter"></div>
+    <div class="coma-twitter"></div>
   <% end %>
 
   <div class='une'><h1>Les derniers flux RSS</h1></div>
@@ -57,7 +57,9 @@
     <a class="bubble-title" href="<%= item.link %>" target="_blank"><%= item.title %></a>
     <span class="time"><%= item.pubDate.to_time.strftime('%d/%m/%y à %H:%M') %></span>
     <br><p></p>
+    <div class="coma-rss"></div>
   </div>
+  
 <% end %>
 
 

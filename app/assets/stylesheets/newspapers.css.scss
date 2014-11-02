@@ -90,13 +90,17 @@ h1, h2, h3, a, span, strong, p {
 }
 
 .container .row .col-lg-9 .une {
-	margin:10px;
+	margin:0;
 }
 
 .container .row .col-lg-9 h1 {
 	font-size:21px;
 	font-family:'Roboto';
-	color:#590b4d;
+	margin-top:30px;
+	color:#333333;
+	margin-top:40px;
+	margin-bottom:20px;
+	margin-left:10px;
 }
 
 /*---------------Bubbles news --------------*/
@@ -113,13 +117,14 @@ h1, h2, h3, a, span, strong, p {
 }
 
 .container .row .col-lg-9 .bubble-news p {
-	color:#ffffff;
+	color:#FAE8F7;
 	font-size:14px;
 	font-family:'Roboto';
+	margin-top:10px;
 }
 
 .container .row .col-lg-9 .bubble-news a {
-	color:#ffffff;
+	color:#FAE8F7;
 	font-size:21px;
 	font-family:'Roboto';
 	max-width:50%;
@@ -127,7 +132,7 @@ h1, h2, h3, a, span, strong, p {
 }
 
 .container .row .col-lg-9 .bubble-news span.readMore {
-	color:#ffffff;
+	color:#FCEDFA;
 	font-size:14px;
 	font-family:'Roboto';
 }
@@ -135,11 +140,11 @@ h1, h2, h3, a, span, strong, p {
 .container .row .col-lg-9 .bubble-news span.time {
 	float:right;
 	font-size:12px;
-	color:#ffffff;
+	color:#FAE8F7;
 }
 
 .container .row .col-lg-9 .bubble-news a:focus, .container .row .col-lg-9 .bubble-news a:active {
-	color:#862d77;
+	color:#FAE8F7;
 	font-size:21px;
 	font-family:'Roboto';
 }
@@ -151,13 +156,15 @@ h1, h2, h3, a, span, strong, p {
 }
 
 
-.container .row .col-lg-9 .coma {
+.container .row .col-lg-9 .coma-news {
 	position:absolute;
-	background:url('coche_bd.png') no-repeat;
-	background-size: 25px 21px;
-	height:25px;
-	width:21px;
+	background:url('coche_bd_violet.png') no-repeat;
+	background-size: 20px 15px;
+	display:block;
 	right:8%;
+	top:132px;
+	height:35px;
+	width:31px;
 }
 
 /*-------- Bubbles rss --------*/
@@ -165,13 +172,15 @@ h1, h2, h3, a, span, strong, p {
 .container .row .col-lg-9 .bubble-rss {
 	margin:10px;
 	padding:10px;
+	background:#ee8755;
+	border-radius:15px;
 }
 
 .container .row .col-lg-9 .bubble-rss a {
-	color:#590b4d;
+	color:#FFF8F5;
 	font-size:14px;
 	font-family:'Roboto';
-	display:block;
+	display:inline-block;
 }
 
 .container .row .col-lg-9 .bubble-rss span.time {
@@ -180,21 +189,38 @@ h1, h2, h3, a, span, strong, p {
 }
 
 .container .row .col-lg-9 .bubble-rss a:focus, .container .row .col-lg-9 .bubble-rss a:active {
-	color:#862d77;
+	color:#FFF8F5;
 	font-family:'Roboto';
 }
 
 .container .row .col-lg-9 .bubble-rss a:hover {
 	background:none;
 	text-decoration:none;
-	color:#862d77;
+	color:#FFF8F5;
+}
+
+.container .row .col-lg-9 .bubble-rss span.time {
+	float:right;
+	font-size:12px;
+	color:#FFF8F5;
+}
+
+
+.container .row .col-lg-9 .coma-rss {
+	position:absolute;
+	background:url('coche_bd_orange.png') no-repeat;
+	background-size: 20px 15px;
+	display:block;
+	right:8%;
+	height:35px;
+	width:31px;
 }
 
 
 /*---------------Bubbles twitter --------------*/
 
 .container .row .col-lg-9 .bubble-twitter {
-	background:#4099FF;
+	background:#55acee;
 	margin-bottom:0;
 	margin-left:10px;
 	margin-right:10px;
@@ -205,14 +231,14 @@ h1, h2, h3, a, span, strong, p {
 }
 
 .container .row .col-lg-9 .bubble-twitter p {
-	color:#ffffff;
+	color:#E8F3FF;
 	font-size:14px;
 	font-family:'Roboto';
 	margin-top:10px;
 }
 
 .container .row .col-lg-9 .bubble-twitter .bubble-title {
-	color:#ffffff;
+	color:#E8F3FF;
 	font-size:21px;
 	font-family:'Roboto';
 	display:inline-block
@@ -224,11 +250,12 @@ h1, h2, h3, a, span, strong, p {
 	font-size:12px;
 }
 
-.container .row .col-lg-9 .coma {
+.container .row .col-lg-9 .coma-twitter {
 	position:absolute;
-	background:url('coche_bd.png') no-repeat;
-	background-size: 25px 21px;
-	height:25px;
-	width:21px;
+	background:url('coche_bd_twitter.png') no-repeat;
+	background-size: 20px 15px;
+	display:block;
 	right:8%;
+	height:35px;
+	width:31px;
 }
