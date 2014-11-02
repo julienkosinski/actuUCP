@@ -1,12 +1,16 @@
-    
-    <% @newspapers.each do |newspaper| %>
-      <tr>
-        <td><%= newspaper.title %></td>
-        <td><%= newspaper.description %></td>
-        <td><%= newspaper.rating %></td>
-        <td><%= newspaper.author %></td>
-        <td><%= newspaper.id_categories %></td>
-        <td><%=l newspaper.created_at %></td>
-        <td>
-
- <% end %>
+<% @newspapers.each do |newspaper| %>
+  <div class="bubble-news <%= newspaper.id_categories %>">
+    <a class="bubble-title" href="<%= newspaper_path(newspaper)%>"><%= newspaper.title %></a>
+    <span class="time"><%= newspaper.created_at.to_time.strftime('%d/%m/%y à %H:%M') %></span>
+    <p>
+      <% if newspaper.description.length > 150 %>
+      <% text = newspaper.description[0..150]+"..." %>
+      <%= text %>
+      <a href="<%= newspaper_path(newspaper)%>" class="readMore">Lire la suite</a>
+      <% else %>
+      <%= newspaper.description %>
+      <% end %>
+      </p>
+  </div>
+  <div class="coma"></div>
+<% end %>

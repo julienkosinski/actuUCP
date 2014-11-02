@@ -46,12 +46,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Kwak</a>
+        <a class="navbar-brand" href="/newspapers/">Kwak</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+            <li><%= link_to "A la une", "/newspapers/show_by_cat/8"  %></li>
+            <li><%= link_to "Vie politique/sociale", "/newspapers/show_by_cat/2"  %></li>
+            <li><%= link_to "Vie pratique", "/newspapers/show_by_cat/4"  %></li>
+            <li><%= link_to "Culture", "/newspapers/show_by_cat/3"  %></li>
             <li><%= link_to "Sport", "/newspapers/show_by_cat/1"  %></li>
-            <li><%= link_to "Link2", "/newspapers/show_by_cat/2"  %></li>
-            <li><%= link_to "Link3", "/newspapers/show_by_cat/3"  %></li>
+            <li><%= link_to "Sorties", "/newspapers/show_by_cat/5"  %></li>
+            <li><%= link_to "Recherche", "/newspapers/show_by_cat/6"  %></li>
+            <li><%= link_to "Formation", "/newspapers/show_by_cat/7"  %></li>
           </ul>
       </div>
     </div>
