@@ -7,7 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
         can :manage, :all
-        can :feed_rss, :all
+        can :feed_rss, Newspaper
     elsif user.has_role? :association
         can :create, Newspaper
         can :read, Newspaper
